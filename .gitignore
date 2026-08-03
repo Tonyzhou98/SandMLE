@@ -175,7 +175,7 @@ cython_debug/
 .DS_Store
 
 # Ignore parquet files.
-data/* 
+/data/*
 
 # Ignore verl script outputs.
 **/outputs/
@@ -229,7 +229,7 @@ RELEASE_PLAN.md
 examples/deepresearch/output/
 examples/deepresearch/outputs/
 # Datasets (MLE-bench + synthetic tasks are downloaded by the user; see DATA.md)
-data/
+/data/
 *.parquet
 # Local secrets
 .env
