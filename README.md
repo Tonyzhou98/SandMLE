@@ -14,6 +14,7 @@ adapted from [Tongyi DeepResearch](https://github.com/Alibaba-NLP/DeepResearch);
 - **SandMLE code + overview:** [`examples/deepresearch/README.md`](examples/deepresearch/README.md)
 - **Data setup (synthetic tasks + MLE-bench):** [`examples/deepresearch/DATA.md`](examples/deepresearch/DATA.md)
 - **Reproduction runbook (train + eval):** [`examples/deepresearch/REPRODUCE.md`](examples/deepresearch/REPRODUCE.md)
+- **Scaffold generalization (AIRA / AIDE / MLE-Dojo):** [`scaffolds/README.md`](scaffolds/README.md)
 
 ## Configuration
 
@@ -29,9 +30,9 @@ source .env
 ## What's included / not included
 
 - **Included:** synthetic + MLE-bench evaluation, trajectory-wise GRPO training, the dense
-  milestone reward and its sparse ablation, ReAct rollout, and the Slurm-backed execution sandbox.
-- **Not included:** the synthetic *environment generation* pipeline, trained checkpoints, and the
-  AIDE / AIRA / MLE-Agent scaffold-generalization experiments (paper §6).
+  milestone reward and its sparse ablation, ReAct rollout, the Slurm-backed execution sandbox,
+  and the AIRA / AIDE / MLE-Dojo scaffold-generalization overlays (paper §6) under `scaffolds/`.
+- **Not included:** the synthetic *environment generation* pipeline and trained checkpoints.
 
 ## Framework
 

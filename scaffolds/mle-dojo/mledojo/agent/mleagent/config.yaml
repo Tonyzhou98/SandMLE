@@ -1,0 +1,36 @@
+agent:
+  type: "mle"
+  # model_mode: "gpt"
+  # model_name: "anthropic/claude-sonnet-4.5"
+  # base_url: "https://openrouter.ai/api/v1"
+  # model_mode: "local"
+  # model_name: "qwen3_8b_serve"
+  # base_url: "http://localhost:8001/v1"
+  # model_mode: "local"
+  # model_name: "qwen3_8b_serve_finetuned"
+  # base_url: "http://localhost:8001/v1"
+  # model_mode: "local"
+  # model_name: "qwen3_14b_serve"
+  # base_url: "http://localhost:8001/v1"
+  # model_mode: "local"
+  # model_name: "qwen3_14b_serve_finetuned"
+  # base_url: "http://localhost:8001/v1"
+  # model_mode: "local"
+  # model_name: "qwen3_30b_serve"
+  # base_url: "http://localhost:8001/v1"
+  # model_mode: "local"
+  # model_name: "qwen3_30b_serve_finetuned_sft"
+  # base_url: "http://localhost:8001/v1"
+  model_mode: "local"
+  model_name: "qwen3_30b_serve_finetuned_step_60"
+  base_url: "http://localhost:8001/v1"
+  port: 8314
+  max_completion_tokens: 8192
+  max_prompt_tokens: 50000
+  api_idx: -1
+  api_key: null  # set via OPENROUTER_API_KEY / OPENAI_API_KEY env var
+  history_length: "all"
+  init_method: "cold"
+  history_init: null
+  temperature: 0.0
+  top_p: 1.0

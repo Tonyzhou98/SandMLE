@@ -1,0 +1,6 @@
+_target_: dojo.config_dataclasses.client.base.ClientConfig
+api: litellm
+model_id: "qwen3_30b_serve_finetuned_sft"
+base_url: http://localhost:8001/v1
+use_azure_client: False
+provider: selfhosted
