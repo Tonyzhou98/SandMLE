@@ -28,7 +28,7 @@ agent:
   max_completion_tokens: 8192
   max_prompt_tokens: 50000
   api_idx: -1
-  api_key: null  # set via OPENROUTER_API_KEY / OPENAI_API_KEY env var
+  api_key: "YOUR_OPENROUTER_API_KEY"  # placeholder — replace, or set env OPENROUTER_API_KEY / OPENAI_API_KEY
   history_length: "all"
   init_method: "cold"
   history_init: null

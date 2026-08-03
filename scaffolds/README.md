@@ -52,7 +52,8 @@ cp scaffolds/mle-dojo/run_dojo_competitions_*.sh MLE-Dojo/
 cd MLE-Dojo
 conda activate mle-dojo
 # edit mledojo/agent/mleagent/config.yaml and mledojo/agent/aide/utils/config.yaml:
-#   set base_url to your vLLM endpoint; leave api_key: null and export OPENAI_API_KEY/OPENROUTER_API_KEY
+#   set base_url to your vLLM endpoint; replace the api_key placeholder
+#   "YOUR_OPENROUTER_API_KEY" (or leave it and export OPENAI_API_KEY / OPENROUTER_API_KEY)
 export MLE_DOJO_DATA_DIR=/path/to/mle-dojo-data
 export SLURM_QOS=<your-slurm-qos>            # optional, defaults to "normal"
 
