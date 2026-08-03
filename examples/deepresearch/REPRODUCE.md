@@ -89,6 +89,25 @@ python -m examples.deepresearch.custom_evaluate \
 - Results (per-episode rewards, medal tiers, valid-submission) are written under the run's output
   directory.
 
+## Grading an evaluation run (paper tables)
+
+`custom_evaluate.py --dataset easy` writes per-competition `submission.csv` files under its run
+directory. To produce the aggregate MLE-bench grade report (valid submissions, above-median, and
+bronze/silver/gold counts — the numbers in the main-results tables):
+
+```bash
+conda activate rllm
+source .env
+python -m examples.deepresearch.grade_reports \
+    --run-dir examples/deepresearch/output/<your-eval-run> \
+    --output-dir outputs/grade_report
+```
+
+This collects submissions, writes a JSONL manifest, and runs `mlebench grade` against
+`SANDMLE_DATA_ROOT`. The resulting JSON contains `total_valid_submissions`, `total_above_median`,
+`total_{bronze,silver,gold}_medals`, and per-competition reports. (Synthetic-task grading instead
+uses each task's `evaluator.py` via `SynScoreTool` during evaluation.)
+
 ## Notes
 
 - AIDE / AIRA / MLE-Agent scaffold generalization (paper §6) is not included in this release.

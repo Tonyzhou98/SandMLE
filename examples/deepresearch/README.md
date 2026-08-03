@@ -16,6 +16,7 @@ filenames, kept for continuity).
 | `srun_api.py` | FastAPI service that executes each agent code step as a Slurm `srun` job (enforces per-step time limits). |
 | `custom_train.py`, `custom_train_megatron.py` | GRPO trainer entry points (FSDP / Megatron). |
 | `custom_evaluate.py` | Evaluation harness (MLE-bench-lite `easy`/`hard`, synthetic). |
+| `grade_reports.py` | Batch-grade an eval run into an MLE-bench report (main-results tables). |
 | `prepare_train_data.py`, `prepare_sft_data.py` | Build GRPO train/val parquet, and SFT data from trajectories. |
 | `train_mle_*.sh`, `vllm_serve_*.sh` | Slurm launch configs per model size / ablation, and vLLM serving. |
 | `sandmle_config.py` | Central env-driven configuration (no hardcoded paths). |
