@@ -1,0 +1,23 @@
+SandMLE
+=======
+
+This repository accompanies the paper "SandMLE" and releases the reinforcement-learning
+training and evaluation code for machine-learning-engineering (MLE) agents.
+
+Bundled third-party software
+----------------------------
+
+This repository bundles and builds on the following open-source projects. Their original
+licenses and copyrights apply to their respective files:
+
+* rLLM — the reinforcement-learning framework this code runs on. The SandMLE code lives under
+  `examples/deepresearch/`; the rest of the tree is rLLM, published here so the release is
+  self-contained. See the upstream project and its LICENSE for terms.
+  https://github.com/agentica-project/rllm
+
+* Tongyi DeepResearch — the ReAct agent, tool-calling loop, and tool interfaces in
+  `examples/deepresearch/deepresearch_agent.py`, `deepresearch_workflow.py`, and
+  `deepresearch_tools.py` are adapted from Alibaba's Tongyi DeepResearch.
+  https://github.com/Alibaba-NLP/DeepResearch
+
+If you redistribute this repository, retain this NOTICE and the bundled LICENSE files.

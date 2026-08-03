@@ -1,0 +1,11 @@
+# Extra Python deps for the SandMLE example (on top of rLLM).
+# Install inside the `rllm` conda env.
+fastapi
+uvicorn
+httpx
+requests
+json5
+pandas
+pyarrow
+# For real MLE-bench grading (Score tool). Install from https://github.com/openai/mle-bench
+# mlebench
