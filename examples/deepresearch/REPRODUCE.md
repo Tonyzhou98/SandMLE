@@ -11,9 +11,37 @@ Two conda environments (they do different jobs):
 - **`rllm`** — runs the rLLM trainer / evaluator (this repo). Install rLLM per its own docs plus
   `examples/deepresearch/requirements-sandmle.txt`.
 - **`sandmle`** (`SANDMLE_CONDA_ENV`) — the env the SRUN API uses to execute the *agent's* generated
-  code steps (needs numpy/pandas/scikit-learn/torch/Pillow etc., matching what tasks expect).
+  code steps. **This env must contain the ML libraries the tasks need**, otherwise agent code fails
+  at runtime and every rollout scores ~0. Our runs used a Python 3.12 env with:
+
+  ```
+  # core
+  numpy==1.26.4  scipy==1.14.1  pandas==2.2.2  polars==1.38.1  pyarrow==17.0.0  numba==0.60.0
+  # classic ML
+  scikit-learn==1.5.1  scikit-image==0.24.0  xgboost==2.1.1  lightgbm==4.5.0  catboost==1.2.5
+  imbalanced-learn==0.12.3  category-encoders  optuna==4.0.0  statsmodels
+  # deep learning
+  torch==2.2.0  torchvision==0.17.0  torchaudio==2.2.0  torchtext==0.16.2
+  tensorflow==2.17.0  keras==3.5.0  timm==0.9.7  accelerate==0.33.0  einops
+  # NLP
+  transformers==4.44.2  sentence-transformers==3.0.1  datasets==2.1.0  nltk==3.9.1  spacy==3.7.6
+  # vision / audio
+  pillow==10.4.0  opencv-python==4.10.0.84  albumentations==2.0.8
+  librosa==0.10.2.post1  soundfile==0.13.1  audioread==3.1.0
+  # graph / viz / utils
+  networkx==3.3  matplotlib==3.9.2  seaborn==0.13.2  tqdm==4.66.5
+  ```
+
+  (These are the exact libraries/versions we used for training rollouts and evaluation; adjust to
+  match the modalities in your task set.)
 
 A Slurm cluster is required: the sandbox runs each agent code step as an `srun` job.
+
+> **Busy-cluster tip.** The SRUN API launches each code step with plain `srun` (default QOS). If
+> your cluster is full, those steps queue and rollouts stall. Export a QOS that can allocate in the
+> terminal that runs the SRUN API — `srun` inherits it, e.g. `export SLURM_QOS=<your_high_qos>` —
+> so per-step jobs get scheduled promptly. (For the MLE-Dojo scaffolds, `SLURM_QOS` is already a
+> documented knob in `scaffolds/README.md`.)
 
 Get the data first: see [DATA.md](./DATA.md).
 
