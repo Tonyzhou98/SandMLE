@@ -138,6 +138,5 @@ uses each task's `evaluator.py` via `SynScoreTool` during evaluation.)
 
 ## Notes
 
-- AIDE / AIRA / MLE-Agent scaffold generalization (paper §6) is not included in this release.
 - Metrics follow the MLE-bench protocol (Valid Submission, Above Median, Bronze/Silver/Gold,
   Any Medal); synthetic tasks are graded by each task's `evaluator.py` via `SynScoreTool`.
