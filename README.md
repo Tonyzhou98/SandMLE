@@ -4,7 +4,7 @@ Public code release for the paper **SandMLE**. SandMLE makes trajectory-wise, on
 reinforcement learning feasible for machine-learning-engineering (MLE) agents by training and
 evaluating them on diverse, verifiable, *micro-scale* synthetic MLE environments.
 
-This repository releases the **RL training and evaluation** half of SandMLE. It is a
+This repository releases the **RL training and evaluation** of SandMLE. It is a
 self-contained copy of the [rLLM](https://github.com/agentica-project/rllm) framework with the
 SandMLE code under [`examples/deepresearch/`](examples/deepresearch/). (The ReAct agent is
 adapted from [Tongyi DeepResearch](https://github.com/Alibaba-NLP/DeepResearch); see `NOTICE`.)
